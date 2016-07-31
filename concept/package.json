@@ -1,0 +1,15 @@
+{
+  "name": "concept",
+  "version": "v6.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "YoungIl Cho",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.74.0",
+    "socket.io": "^1.4.8"
+  }
+}

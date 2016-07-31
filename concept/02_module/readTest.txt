@@ -1,0 +1,1 @@
+fs async, sync test file

@@ -1,0 +1,1 @@
+module.exports = 'index2.js 파일에 들어있는 내용';

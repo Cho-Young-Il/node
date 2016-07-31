@@ -1,0 +1,1 @@
+module.exports = 'index.js 파일에 있는 내용';

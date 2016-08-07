@@ -168,3 +168,12 @@ console.log('-----------------------------------------');
 
 var obj = { hello: 'world', data: [ 1, 2, 3 ] };
 console.log(JSON.stringify(obj));
+
+
+
+//$.each([ 52, 97 ], function( index, value ) {
+//    alert( index + ": " + value );
+//});
+//
+//0: 52
+//1: 97

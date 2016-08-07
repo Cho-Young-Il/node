@@ -16,6 +16,6 @@ async.map(files, fs.readFile, (err, results) => {
     console.log(results[2].toString('utf8'));
 });
 
-async.map(files, fs.stat, (err, results) => {
-    console.log(results);
-});
+//async.map(files, fs.stat, (err, results) => {
+//    console.log(results);
+//});

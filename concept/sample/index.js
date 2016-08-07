@@ -1,8 +1,8 @@
-const server = require('./server'),
-    router = require('./router'),
-    requestHandlers = require('./requestHandlers');
+const server = require('./server');
+const router = require('./router');
+const requestHandlers = require('./requestHandlers');
 
-var handler = {};
+const handler = {};
 handler['/'] = requestHandlers.start;
 handler['/start'] = requestHandlers.start;
 handler['/upload'] = requestHandlers.upload;

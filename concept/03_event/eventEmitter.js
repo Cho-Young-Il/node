@@ -40,4 +40,6 @@ myCar.on('accel', (args1) => {
 });
 
 myCar.emit('accel', 'BBANG!');
+myCar.emit('stop');
+
 myCar.stop();

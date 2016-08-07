@@ -1,42 +1,38 @@
-const fs = require('fs'),
-    querystring = require('querystring'),
-    formidable = require('formidable');
+const fs = require('fs');
+const querystring = require('querystring');
+const formidable = require('formidable');
 
-function start (res, req) {
+const start = (res, req) => {
     console.log('Request handler \'start\' was called');
-
-    fs.readFile('./upload.html', 'utf-8', function(err, data) {
+    fs.readFile('./upload.html', 'utf8', (err, data) => {
         if(err) { throw err; }
-        res.writeHead(200, {'content-type': 'text/html; charset=utf-8'});
+        res.writeHead(200, {'content-type': 'text/html'});
         res.write(data);
         res.end();
     });
-}
+};
 
-function upload (res, req) {
+const upload = (res, req) => {
     console.log('Request handler \'upload\' was called');
 
-    var form = new formidable.IncomingForm();
+    let form = new formidable.IncomingForm();
     console.log('about to parse');
-
-    form.parse(req, function(err, fields, files) {
-        if(err) { throw err; }
+    form.parse(req, (err, fields, files) => {
+        console.log('parsing done');
         fs.renameSync(files.upload.path, './tmp/test.png');
         res.writeHead(200, {'content-type': 'text/html'});
         res.write('received image:<br/>');
-        res.write('<img src=\'/show\'/>');
+        res.write('<img src=\'/show\'');
         res.end();
     });
+};
 
-}
-
-function show (res, req) {
+const show = (res, req) => {
     console.log('Request handler \'show\' was called');
-
-    fs.readFile('./tmp/test.png', 'binary', function(err, file) {
+    fs.readFile('./tmp/test.png', 'binary', (err, file) => {
         if(err) {
             res.writeHead(500, {'content-type': 'text/plain'});
-            res.write(err + '\n');
+            res.write(error + '\n');
             res.end();
         } else {
             res.writeHead(200, {'content-type': 'image/png'});

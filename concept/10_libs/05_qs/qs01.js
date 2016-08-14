@@ -22,7 +22,7 @@ var limited = qs.parse('a=b&c=d', {parameterLimit: 1});
 assert.deepEqual(limited, { a: 'b' });
 
 //delimiter
-var delimited = qs.parse('a=b; c=d', {delimiter: ';'});
+var delimited = qs.parse('a=b; c=d', {delimiter: '; '});
 assert.deepEqual(delimited, { a: 'b', c: 'd' });
 
 var withDots = qs.parse('a.b=c', { allowDots: true });

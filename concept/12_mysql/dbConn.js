@@ -37,6 +37,11 @@ class DBConn {
         return this.pool;
     }
 
+    static destroy() {
+        this.conn.end();
+        this.pool.end();
+    }
+
 }
 
 module.exports = {
@@ -45,7 +50,8 @@ module.exports = {
         createConn  : DBConn.createConn,
         createPool  : DBConn.createPool,
         getConn     : DBConn.getConn,
-        getPool     : DBConn.getPool
+        getPool     : DBConn.getPool,
+        destroy     : DBConn.destroy
     }
 
 };

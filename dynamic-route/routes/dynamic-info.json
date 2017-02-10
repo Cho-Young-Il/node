@@ -1,0 +1,6 @@
+{
+	"routeInfo": [
+		{ "file": "routes/index", "url": "/", "method": [ "GET" ] },
+		{ "file": "routes/test", "url": "/test", "method": [ "GET", "POST" ] }
+	]
+}

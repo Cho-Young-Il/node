@@ -24,7 +24,6 @@ module.exports = (app) => {
 				if (err || !routeInfo) { return next(err); }
 
 				const supportMethods = routeInfo.method;
-				console.log(method);
 				if (!supportMethods.includes(method)) { return next(); }
 
 				require(routeInfo.file)(req, res, next);
